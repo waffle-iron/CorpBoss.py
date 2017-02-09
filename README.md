@@ -1,6 +1,8 @@
 # CorpBoss.py
 [CorpBot.py](https://github.com/corpnewt/CorpBot.py), boss edition 
+
 Bosses other bots around
+
 A sample of his `$help` command:
 
 -
