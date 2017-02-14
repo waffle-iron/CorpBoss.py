@@ -213,7 +213,7 @@ strike = Strike.Strike(bot, settings)
 cogList.append(strike)
 
 # Debugging
-debugging = Debugging.Debugging(bot, settings)
+debugging = Debugging.Debugging(bot, settings, debug)
 cogList.append(debugging)
 
 # CardsAgainstHumanity
@@ -275,6 +275,8 @@ async def on_voice_state_update(before, after):
 	try:
 		state.audio_player.cancel()
 		del music.voice_states[server.id]
+		state.playlist = []
+		state.repeat = False
 		await state.voice.disconnect()
 	except:
 		pass
@@ -436,6 +438,15 @@ async def on_command(command, ctx):
 		except AttributeError:
 			# Onto the next
 			continue
+
+@bot.event
+async def on_command_completion(command, ctx):
+	for cog in cogList:
+		try:
+			await cog.oncommandcompletion(command, ctx)
+		except AttributeError:
+			# Onto the next
+			continue
 		
 @bot.event
 async def on_message_edit(before, message):
@@ -494,5 +505,7 @@ for cog in cogList:
 	bot.add_cog(cog)
 
 print("{} Cog(s) Loaded.".format(i))
-	
+
+# await bot.connect()
+# bot.login(token)
 bot.run(token)
