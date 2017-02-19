@@ -13,9 +13,13 @@ debug.txt
 # FFMpeg.exe
 ffmpeg.exe
 
+# Chatterbot database
+database.db
+
 # Hidden stuff
 .git
 .vscode
+.idea
 
 # Settings
 Settings*

@@ -45,6 +45,7 @@ from Cogs import ServerStats
 from Cogs import Strike
 from Cogs import Debugging
 from Cogs import CardsAgainstHumanity
+from Cogs import ChatterBot
 
 # Let's load our prefix file
 prefix = '$'
@@ -65,7 +66,7 @@ deckFile = "deck.json"
 corpSiteAuth = "corpSiteAuth.txt"
 # Open our token
 with open('token.txt', 'r') as f:
-	token = f.read()
+	token = f.read().strip()
 
 # Create our cog classes
 cogList = []
@@ -220,6 +221,10 @@ cogList.append(debugging)
 if os.path.exists(deckFile):
 	cah = CardsAgainstHumanity.CardsAgainstHumanity(bot)
 	cogList.append(cah)
+
+# Cleverbot
+# chatterbot = ChatterBot.ChatterBot(bot, settings, prefix)
+# cogList.append(chatterbot)
 
 # Help - Must be last
 #help = Help.Help(bot, cogList)

@@ -40,6 +40,12 @@ echo   ###                ###
 echo  # CorpBot - CorpNewt #
 echo ###                ###
 echo.
+
+echo Installing Chatterbot...
+echo.
+call :install "chatterbot"
+echo.
+
 echo Installing Discord...
 echo.
 call :install "discord.py[voice]"
