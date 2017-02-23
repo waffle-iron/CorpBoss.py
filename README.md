@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/dhinakg/CorpBoss.py.png?label=ready&title=Ready)](https://waffle.io/dhinakg/CorpBoss.py)
 # CorpBoss.py
 [CorpBot.py](https://github.com/corpnewt/CorpBot.py), boss edition 
 
